@@ -40,9 +40,18 @@ void PrintStringArray(string[] stringArray)
         }
         else
         {
-            Console.Write($"{stringArray[i]}]");
+            Console.Write($"{stringArray[i]}");
         }
-
     }
+    Console.WriteLine("]");
     Console.WriteLine();
 }
+
+Console.WriteLine("Введите количество элементов в массиве:");
+int numberOfElements = Convert.ToInt32(Console.ReadLine());
+string[] generatedArray = GenerateStringArray(numberOfElements);
+Console.WriteLine("Заданный массив:");
+PrintStringArray(generatedArray);
+string[] modifiedArray = GetModifiedArray(generatedArray);
+Console.WriteLine("Измененный массив:");
+PrintStringArray(modifiedArray);
