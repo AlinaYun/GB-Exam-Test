@@ -12,3 +12,18 @@ string[] GenerateStringArray(int numberOfElements)    // numberOfElements - ко
     }
     return stringArray;
 }
+
+// Метод для формирования массива из строк, длина которых меньше, либо равна 3 символа
+string[] GetModifiedArray(string[] givenArray)
+{
+    string[] modifiedArray = new string[givenArray.Length];
+    for (int i = 0; i < givenArray.Length; i++)
+    {
+        if (givenArray[i].Length <= 3)
+        {
+            modifiedArray[i] = givenArray[i];
+        }
+    }
+    modifiedArray = modifiedArray.Where(x => x != null).ToArray();
+    return modifiedArray;
+}
