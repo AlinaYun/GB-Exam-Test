@@ -9,6 +9,11 @@ string[] GenerateStringArray(int numberOfElements)    // numberOfElements - ко
     {
         Console.WriteLine($"Введите {i + 1} элемент в массиве:");
         stringArray[i] = Console.ReadLine();              // ввод с клавиатуры каждого элемента
+        if (stringArray[i].Length < 1)
+        {
+            Console.WriteLine($"Вы не ввели значение. Введите {i + 1} элемент в массиве:");
+            i -= 1;
+        }
     }
     return stringArray;
 }
